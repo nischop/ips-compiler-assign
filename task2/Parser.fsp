@@ -1,0 +1,38 @@
+%{
+open FSharp.Text.Parsing
+%}
+
+%token <int> INT
+%token <string> VAR
+%token LPAR RPAR PLUS EQ
+// FIXME: You should declare tokens for:
+//   + Remaining operators and other punctuation
+//   + Keywords
+// The token for identifier (variable name) is
+//     already provided ('VAR')
+%token EOF
+
+// FIXME: Add (more) precedence/associativity declarations here.
+%left PLUS
+
+%start Prog
+%type <AbSyn.Exp> Prog
+%type <AbSyn.Exp> Exp
+// FIXME: possibly add types for other nonterminals here
+
+%%
+
+Prog : Exp EOF { $1 }
+;
+
+Exp : INT            { AbSyn.CONSTANT (AbSyn.INT $1) }
+    | VAR            { AbSyn.VARIABLE $1 }
+    | LPAR Exp RPAR  { $2 }
+// FIXME: You should implement parsing for:
+//   + infix operators
+//   + let ... = ... in ...
+//   + Rop ( ... )
+//   + Rop ... = ... to ... of ...
+;
+
+%%
