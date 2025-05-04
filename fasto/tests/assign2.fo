@@ -1,3 +1,8 @@
+
+//QUESTIONS
+// 1. Should you be able to have negative numbers in the array
+// 2. How the fuck to do it wihout the index?
+
 fun int mul(int x, int y) =
     if x == 0 then
         0
@@ -19,6 +24,7 @@ fun int main() =
     else if 0 < n then 
         let arr = iota(n) in
         let w = map(readInt, arr) in
+        let test = map(fn int (int x) => if x == 0 then w[0] - w[n-1] else w[x] - w[x-1], w) in 
         let hmm = write_int_arr(w) in 1
     else
         write("Array Length Cannot be negative")
