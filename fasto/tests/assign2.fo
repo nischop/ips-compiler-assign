@@ -16,6 +16,8 @@ fun int readInt(int d) = read(int)
 fun int write_int(int x) = write(x)
 fun [int] write_int_arr([int] x) = map(write_int, x)
     
+fun int square(int x) = mul(x,x)
+fun int plus(int x, int y) = x + y
 
 fun int main() =
     let n = read(int) in
@@ -24,8 +26,10 @@ fun int main() =
     else if 0 < n then 
         let arr = iota(n) in
         let w = map(readInt, arr) in
-        let test = map(fn int (int x) => if x == 0 then w[0] - w[n-1] else w[x] - w[x-1], arr) in 
-        let hmm = write_int_arr(test) in 1
+        let test = map(fn int (int x) => if x == 0 then w[0] - w[n-1] else w[x] - w[x-1], arr) in
+        let aight = map(square, test) in
+        let d = reduce(plus, 0, aight) in 
+        let hmm = write_int(d) in 1
     else
         write("Array Length Cannot be negative")
 
