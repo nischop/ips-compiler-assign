@@ -1,3 +1,9 @@
-fun int mul(int x, int y) = 0 // write me
-
-fun int main() = 0 // write me
+fun int mul(int x, int y) =
+    if x == 0 
+    then 0
+    else y + mul(x-1,y)
+    
+fun int main() =
+    let r1 = 0-4 in
+    let r2 = 1-6 in
+    mul(r1,6)

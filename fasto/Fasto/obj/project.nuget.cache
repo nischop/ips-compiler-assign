@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "E23sxCC8Irw=",
+  "success": true,
+  "projectFilePath": "/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/fasto/Fasto/Fasto.fsproj",
+  "expectedPackageFiles": [
+    "/Users/bong/.nuget/packages/fsharp.core/9.0.202/fsharp.core.9.0.202.nupkg.sha512",
+    "/Users/bong/.nuget/packages/fslexyacc/11.2.0/fslexyacc.11.2.0.nupkg.sha512",
+    "/Users/bong/.nuget/packages/fslexyacc.runtime/11.2.0/fslexyacc.runtime.11.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
