@@ -24,8 +24,8 @@ fun int main() =
     else if 0 < n then 
         let arr = iota(n) in
         let w = map(readInt, arr) in
-        let test = map(fn int (int x) => if x == 0 then w[0] - w[n-1] else w[x] - w[x-1], w) in 
-        let hmm = write_int_arr(w) in 1
+        let test = map(fn int (int x) => if x == 0 then w[0] - w[n-1] else w[x] - w[x-1], arr) in 
+        let hmm = write_int_arr(test) in 1
     else
         write("Array Length Cannot be negative")
 
