@@ -6,13 +6,18 @@ fun int mul(int x, int y) =
     else
         y + mul(x - 1, y)
 
+fun int readInt(int d) = read(int)
+
+fun int write_int(int x) = write(x)
+fun [int] write_int_arr([int] x) = map(write_int, x)
+
 fun int main() =
     let n = read(int) in
-    if n == 0 
-        then let error = write("Wrong Input") in 0 
-    else 
-        let z = iota(n) in n
-//    let q = (let z = N + N in N + N + N) in
-//    let y = boo(z) in
-//    let w = map(mul2, y) in
-//    write_int_arr(w)
+    if n == 0 then 
+        let error = write("Incorrect Input!") in 0 
+    else if 0 < n then 
+        let arr = iota(n) in
+        let w = map(readInt, arr) in
+        let hmm = write_int_arr(w) in 1
+    else
+        write("Array Length Cannot be negative")
