@@ -1,0 +1,3 @@
+fun int mul(int x, int y) = 0 // write me
+
+fun int main() = 0 // write me
