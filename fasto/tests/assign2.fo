@@ -10,6 +10,7 @@ fun int readInt(int d) = read(int)
 
 fun int write_int(int x) = write(x)
 fun [int] write_int_arr([int] x) = map(write_int, x)
+    
 
 fun int main() =
     let n = read(int) in
@@ -21,3 +22,7 @@ fun int main() =
         let hmm = write_int_arr(w) in 1
     else
         write("Array Length Cannot be negative")
+
+//  let a = iota(7) in
+//  let tmp = write(a[0]) in
+//  let d = reduce(plus, 0, a) in // d = 0 + 0 + 1 + 2 + ... + (n - 1)
