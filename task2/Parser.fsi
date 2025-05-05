@@ -8,6 +8,8 @@ type token =
   | EQ
   | MINUS
   | TIMES
+  | LET
+  | IN
   | VAR of (string)
   | INT of (int)
 type tokenId = 
@@ -18,6 +20,8 @@ type tokenId =
     | TOKEN_EQ
     | TOKEN_MINUS
     | TOKEN_TIMES
+    | TOKEN_LET
+    | TOKEN_IN
     | TOKEN_VAR
     | TOKEN_INT
     | TOKEN_end_of_input
