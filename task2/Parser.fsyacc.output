@@ -298,7 +298,7 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
     action 'LET' (noprec):   error
-    action 'IN' (noprec):   shift 24
+    action 'IN' (explicit nonassoc 9997):   shift 24
     action 'PLUS' (explicit left 9998):   shift 18
     action 'MINUS' (explicit left 9998):   shift 19
     action 'TIMES' (explicit left 9999):   shift 20
@@ -313,27 +313,27 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp
     Exp -> 'LET' 'VAR' 'EQ' Exp 'IN' Exp . 
-  actions:    action 'COMMA' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'SUM' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'PROD' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'MAX' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'ARGMAX' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'EOF' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'LPAR' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'RPAR' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'EQ' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'LET' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'IN' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+  actions:    action 'COMMA' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'SUM' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'PROD' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'MAX' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'ARGMAX' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'EOF' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'LPAR' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'RPAR' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'EQ' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'LET' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'IN' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
     action 'PLUS' (explicit left 9998):   shift 18
     action 'MINUS' (explicit left 9998):   shift 19
     action 'TIMES' (explicit left 9999):   shift 20
-    action 'TO' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'OF' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'VAR' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'INT' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'error' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action '#' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action '$$' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'TO' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'OF' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'VAR' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'INT' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'error' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action '#' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action '$$' (explicit nonassoc 9997):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
   immediate action: <none>  gotos:state 14:  items:    Exp -> Exp . 'PLUS' Exp
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp
@@ -352,7 +352,7 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'PLUS' (explicit left 9998):   shift 18
     action 'MINUS' (explicit left 9998):   shift 19
     action 'TIMES' (explicit left 9999):   shift 20
-    action 'TO' (noprec):   shift 31
+    action 'TO' (explicit nonassoc 9997):   shift 31
     action 'OF' (noprec):   error
     action 'VAR' (noprec):   error
     action 'INT' (noprec):   error
@@ -378,7 +378,7 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'MINUS' (explicit left 9998):   shift 19
     action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   error
-    action 'OF' (noprec):   shift 32
+    action 'OF' (explicit nonassoc 9997):   shift 32
     action 'VAR' (noprec):   error
     action 'INT' (noprec):   error
     action 'error' (noprec):   error
@@ -388,27 +388,27 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp
     Exp -> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp . 
-  actions:    action 'COMMA' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'SUM' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'PROD' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'MAX' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'ARGMAX' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'EOF' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'LPAR' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'RPAR' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'EQ' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'LET' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'IN' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'COMMA' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'SUM' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'PROD' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'MAX' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'ARGMAX' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'EOF' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'LPAR' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'RPAR' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'EQ' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'LET' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'IN' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
     action 'PLUS' (explicit left 9998):   shift 18
     action 'MINUS' (explicit left 9998):   shift 19
     action 'TIMES' (explicit left 9999):   shift 20
-    action 'TO' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'OF' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'VAR' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'INT' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'error' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action '#' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action '$$' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TO' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'OF' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'VAR' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'INT' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'error' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '#' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '$$' (explicit nonassoc 9997):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
   immediate action: <none>  gotos:state 17:  items:    Exp -> Exp . 'PLUS' Exp
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp

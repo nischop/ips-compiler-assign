@@ -16,8 +16,10 @@ open FSharp.Text.Parsing
 %token COMMA
 
 // FIXME: Add (more) precedence/associativity declarations here.
+%nonassoc TO OF IN
 %left PLUS MINUS
 %left TIMES
+
 
 %start Prog
 %type <AbSyn.Exp> Prog
