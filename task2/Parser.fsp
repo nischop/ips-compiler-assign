@@ -1,19 +1,24 @@
 %{
 open FSharp.Text.Parsing
 %}
-
+// QUESTIONS
+// CAN IT BE TRUE THAT EQ LET IN TO OF NEEDS PRECEDENCE?
 %token <int> INT
 %token <string> VAR
-%token LPAR RPAR PLUS EQ MINUS TIMES LET IN
+%token LPAR RPAR EQ LET IN PLUS MINUS TIMES TO OF
 // FIXME: You should declare tokens for:
 //   + Remaining operators and other punctuation
 //   + Keywords
 // The token for identifier (variable name) is
 //     already provided ('VAR')
 %token EOF
+%token SUM PROD MAX ARGMAX
+%token COMMA
 
 // FIXME: Add (more) precedence/associativity declarations here.
-%left PLUS MINUS TIMES
+%left PLUS MINUS
+%left TIMES
+%left LET
 
 %start Prog
 %type <AbSyn.Exp> Prog
@@ -28,11 +33,27 @@ Prog : Exp EOF { $1 }
 Exp : INT            { AbSyn.CONSTANT (AbSyn.INT $1) }
     | VAR            { AbSyn.VARIABLE $1 }
     | LPAR Exp RPAR  { $2 }
-    // | Exp EQ Exp     { $1, $3 }
-    | Exp PLUS Exp   { AbSyn.OPERATE (AbSyn.BPLUS, $1, $3) }
-    | Exp MINUS Exp  { AbSyn.OPERATE (AbSyn.BMINUS, $1, $3) }
-    | Exp TIMES Exp  { AbSyn.OPERATE (AbSyn.BTIMES, $1, $3) }
+    | Exp PLUS Exp  { AbSyn.OPERATE (AbSyn.BPLUS, $1, $3) }
+    | Exp MINUS Exp { AbSyn.OPERATE (AbSyn.BMINUS, $1, $3) }
+    | Exp TIMES Exp { AbSyn.OPERATE (AbSyn.BTIMES, $1, $3) }
     | LET VAR EQ Exp IN Exp { AbSyn.LET_IN($2, $4, $6) }
+    | Rop LPAR ExpList RPAR { AbSyn.OVER_LIST ($1, $3) }
+    | Rop VAR EQ Exp TO Exp OF Exp { AbSyn.OVER_RANGE ($1, $2, $4, $6, $8) }
+
+Binop :
+    | PLUS    { AbSyn.BPLUS }
+    | MINUS   { AbSyn.BMINUS }
+    | TIMES    { AbSyn.BTIMES }
+
+Rop :
+    | SUM    { AbSyn.RSUM }
+    | PROD   { AbSyn.RPROD }
+    | MAX    { AbSyn.RMAX }
+    | ARGMAX { AbSyn.RARGMAX }
+
+ExpList :
+    | Exp                        { [$1] }
+    | Exp COMMA ExpList          { $1 :: $3 }
 // FIXME: You should implement parsing for:
 //   + infix operators
 //   + let ... = ... in ...

@@ -1,8 +1,3 @@
-/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.fsproj.AssemblyReference.cache
-/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.AssemblyInfoInputs.cache
-/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.AssemblyInfo.fs
-/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.fsproj.CoreCompileInputs.cache
-/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.sourcelink.json
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/bin/Debug/net9.0/Calculator
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/bin/Debug/net9.0/Calculator.deps.json
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/bin/Debug/net9.0/Calculator.runtimeconfig.json
@@ -23,6 +18,11 @@
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/bin/Debug/net9.0/tr/FSharp.Core.resources.dll
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/bin/Debug/net9.0/zh-Hans/FSharp.Core.resources.dll
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/bin/Debug/net9.0/zh-Hant/FSharp.Core.resources.dll
+/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.fsproj.AssemblyReference.cache
+/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.AssemblyInfoInputs.cache
+/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.AssemblyInfo.fs
+/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.fsproj.CoreCompileInputs.cache
+/Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.sourcelink.json
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.fsproj.Up2Date
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/Calculator.dll
 /Users/bong/Desktop/datalogi/4-Semester/ips/assignment/ipsweekly2/task2/obj/Debug/net9.0/refint/Calculator.dll

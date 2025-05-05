@@ -9,6 +9,12 @@ let keyword (s : string) =
   match s with
     | "let" -> Parser.LET
     | "in" -> Parser.IN
+    | "of" -> Parser.OF
+    | "to" -> Parser.TO
+    | "sum" -> Parser.SUM
+    | "prod" -> Parser.PROD
+    | "max" -> Parser.MAX
+    | "argmax" -> Parser.ARGMAX
     | _     -> Parser.VAR s
  }
 
@@ -29,6 +35,7 @@ rule Token = parse
   | '+' { Parser.PLUS }
   | '-' { Parser.MINUS }
   | '*' { Parser.TIMES }
+  | "," { Parser.COMMA }
 
   | ['a'-'z''A'-'Z'] (['a'-'z''A'-'Z''_']* ('_' (['0'-'9'] | ['a'-'z''A'-'Z'])+)?)*{ keyword (Encoding.UTF8.GetString lexbuf.Lexeme) }
 
