@@ -16,7 +16,11 @@ rule Token = parse
     (* Integers. *)
   | '0' | ['1'-'9']['0'-'9']*
     { Parser.INT (int (Encoding.UTF8.GetString lexbuf.Lexeme)) }
-
+  | ['a'-'z''A'-'Z'] (['a'-'z''A'-'Z''0'-'9'_'])* as name {
+    if name |> String.exists System.Char.IsDigit then
+        if name.Contains "_" then VAR(name)
+        else failwithf "Invalid: digits require underscore: %s" name
+    else VAR(name)}
     (* Symbols *)
   | '(' { Parser.LPAR }
   | ')' { Parser.RPAR }
