@@ -20,6 +20,10 @@ rule Token = parse
     (* Symbols *)
   | '(' { Parser.LPAR }
   | ')' { Parser.RPAR }
+  | '=' { Parser.EQ }
+  | '+' { Parser.PLUS }
+  | '-' { Parser.MINUS }
+  | '*' { Parser.TIMES }
 
   | ['a'-'z''A'-'Z']+ { keyword (Encoding.UTF8.GetString lexbuf.Lexeme) }
 

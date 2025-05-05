@@ -4,7 +4,7 @@ open FSharp.Text.Parsing
 
 %token <int> INT
 %token <string> VAR
-%token LPAR RPAR PLUS EQ
+%token LPAR RPAR PLUS EQ MINUS TIMES
 // FIXME: You should declare tokens for:
 //   + Remaining operators and other punctuation
 //   + Keywords
@@ -13,7 +13,7 @@ open FSharp.Text.Parsing
 %token EOF
 
 // FIXME: Add (more) precedence/associativity declarations here.
-%left PLUS
+%left PLUS MINUS TIMES
 
 %start Prog
 %type <AbSyn.Exp> Prog
@@ -28,6 +28,10 @@ Prog : Exp EOF { $1 }
 Exp : INT            { AbSyn.CONSTANT (AbSyn.INT $1) }
     | VAR            { AbSyn.VARIABLE $1 }
     | LPAR Exp RPAR  { $2 }
+    // | Exp EQ Exp     { $1, $3 }
+    | Exp PLUS Exp   { AbSyn.OPERATE (AbSyn.BPLUS, $1, $3) }
+    | Exp MINUS Exp  { AbSyn.OPERATE (AbSyn.BMINUS, $1, $3) }
+    | Exp TIMES Exp  { AbSyn.OPERATE (AbSyn.BTIMES, $1, $3) }
 // FIXME: You should implement parsing for:
 //   + infix operators
 //   + let ... = ... in ...
