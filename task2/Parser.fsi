@@ -44,7 +44,6 @@ type nonTerminalId =
     | NONTERM__startProg
     | NONTERM_Prog
     | NONTERM_Exp
-    | NONTERM_Binop
     | NONTERM_Rop
     | NONTERM_ExpList
 /// This function maps tokens to integer indexes

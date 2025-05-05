@@ -10,7 +10,7 @@ state 0:  items:    _startProg ->  . Prog
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -62,9 +62,9 @@ state 1:  items:    _startProg -> Prog .
     action 'EQ' (noprec):   error
     action 'LET' (noprec):   error
     action 'IN' (noprec):   error
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   error
     action 'OF' (noprec):   error
     action 'VAR' (noprec):   error
@@ -148,7 +148,7 @@ state 1:  items:    _startProg -> Prog .
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -177,9 +177,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   error
     action 'LET' (noprec):   error
     action 'IN' (noprec):   error
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   error
     action 'OF' (noprec):   error
     action 'VAR' (noprec):   error
@@ -213,77 +213,77 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     Exp -> Exp 'PLUS' Exp . 
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp
-  actions:    action 'COMMA' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'SUM' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'PROD' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'MAX' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'ARGMAX' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'EOF' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'LPAR' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'RPAR' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'EQ' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'LET' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'IN' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'PLUS' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'MINUS' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'TIMES' (explicit left 9998):   shift 20
-    action 'TO' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'OF' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'VAR' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'INT' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action 'error' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action '#' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
-    action '$$' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+  actions:    action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'SUM' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'PROD' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'MAX' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'ARGMAX' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'EOF' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'LPAR' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'RPAR' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'EQ' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'LET' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'IN' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'PLUS' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'MINUS' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'TIMES' (explicit left 9999):   shift 20
+    action 'TO' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'OF' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'VAR' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'INT' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action 'error' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action '#' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
+    action '$$' (explicit left 9998):   reduce Exp --> Exp 'PLUS' Exp
   immediate action: <none>  gotos:state 10:  items:    Exp -> Exp . 'PLUS' Exp
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp 'MINUS' Exp . 
     Exp -> Exp . 'TIMES' Exp
-  actions:    action 'COMMA' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'SUM' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'PROD' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'MAX' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'ARGMAX' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'EOF' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'LPAR' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'RPAR' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'EQ' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'LET' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'IN' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'PLUS' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'MINUS' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'TIMES' (explicit left 9998):   shift 20
-    action 'TO' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'OF' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'VAR' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'INT' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action 'error' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action '#' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
-    action '$$' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+  actions:    action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'SUM' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'PROD' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'MAX' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'ARGMAX' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'EOF' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'LPAR' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'RPAR' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'EQ' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'LET' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'IN' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'PLUS' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'MINUS' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'TIMES' (explicit left 9999):   shift 20
+    action 'TO' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'OF' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'VAR' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'INT' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action 'error' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action '#' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
+    action '$$' (explicit left 9998):   reduce Exp --> Exp 'MINUS' Exp
   immediate action: <none>  gotos:state 11:  items:    Exp -> Exp . 'PLUS' Exp
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp
     Exp -> Exp 'TIMES' Exp . 
-  actions:    action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'SUM' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'PROD' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'MAX' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'ARGMAX' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'EOF' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'LPAR' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'RPAR' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'EQ' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'LET' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'IN' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'PLUS' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'MINUS' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'TIMES' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'TO' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'OF' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'VAR' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'INT' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action 'error' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action '#' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
-    action '$$' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+  actions:    action 'COMMA' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'SUM' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'PROD' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'MAX' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'ARGMAX' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'EOF' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'LPAR' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'RPAR' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'EQ' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'LET' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'IN' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'PLUS' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'MINUS' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'TIMES' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'TO' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'OF' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'VAR' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'INT' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'error' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action '#' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action '$$' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
   immediate action: <none>  gotos:state 12:  items:    Exp -> Exp . 'PLUS' Exp
     Exp -> Exp . 'MINUS' Exp
     Exp -> Exp . 'TIMES' Exp
@@ -299,9 +299,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   error
     action 'LET' (noprec):   error
     action 'IN' (noprec):   shift 24
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   error
     action 'OF' (noprec):   error
     action 'VAR' (noprec):   error
@@ -324,9 +324,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
     action 'LET' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
     action 'IN' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
     action 'OF' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
     action 'VAR' (noprec):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
@@ -349,9 +349,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   error
     action 'LET' (noprec):   error
     action 'IN' (noprec):   error
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   shift 31
     action 'OF' (noprec):   error
     action 'VAR' (noprec):   error
@@ -374,9 +374,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   error
     action 'LET' (noprec):   error
     action 'IN' (noprec):   error
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   error
     action 'OF' (noprec):   shift 32
     action 'VAR' (noprec):   error
@@ -399,9 +399,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
     action 'LET' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
     action 'IN' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
     action 'OF' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
     action 'VAR' (noprec):   reduce Exp --> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
@@ -425,9 +425,9 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'EQ' (noprec):   reduce ExpList --> Exp
     action 'LET' (noprec):   reduce ExpList --> Exp
     action 'IN' (noprec):   reduce ExpList --> Exp
-    action 'PLUS' (explicit left 9997):   shift 18
-    action 'MINUS' (explicit left 9997):   shift 19
-    action 'TIMES' (explicit left 9998):   shift 20
+    action 'PLUS' (explicit left 9998):   shift 18
+    action 'MINUS' (explicit left 9998):   shift 19
+    action 'TIMES' (explicit left 9999):   shift 20
     action 'TO' (noprec):   reduce ExpList --> Exp
     action 'OF' (noprec):   reduce ExpList --> Exp
     action 'VAR' (noprec):   reduce ExpList --> Exp
@@ -445,7 +445,7 @@ state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -469,7 +469,7 @@ state 19:  items:    Exp -> Exp 'MINUS' . Exp
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -493,7 +493,7 @@ state 20:  items:    Exp -> Exp 'TIMES' . Exp
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -561,7 +561,7 @@ state 21:  items:    Exp -> 'LET' . 'VAR' 'EQ' Exp 'IN' Exp
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -585,7 +585,7 @@ state 24:  items:    Exp -> 'LET' 'VAR' 'EQ' Exp 'IN' . Exp
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -632,7 +632,7 @@ state 25:  items:    Exp -> Rop . 'LPAR' ExpList 'RPAR'
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -723,7 +723,7 @@ state 27:  items:    Exp -> Rop 'LPAR' ExpList . 'RPAR'
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -747,7 +747,7 @@ state 31:  items:    Exp -> Rop 'VAR' 'EQ' Exp 'TO' . Exp 'OF' Exp
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -771,7 +771,7 @@ state 32:  items:    Exp -> Rop 'VAR' 'EQ' Exp 'TO' Exp 'OF' . Exp
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error
@@ -883,7 +883,7 @@ state 33:  items:    Rop -> 'SUM' .
     action 'LPAR' (noprec):   shift 6
     action 'RPAR' (noprec):   error
     action 'EQ' (noprec):   error
-    action 'LET' (explicit left 9999):   shift 21
+    action 'LET' (noprec):   shift 21
     action 'IN' (noprec):   error
     action 'PLUS' (noprec):   error
     action 'MINUS' (noprec):   error

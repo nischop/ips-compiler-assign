@@ -32,7 +32,3 @@ fun int main() =
         let hmm = write_int(d) in 1
     else
         write("Array Length Cannot be negative")
-
-//  let a = iota(7) in
-//  let tmp = write(a[0]) in
-//  let d = reduce(plus, 0, a) in // d = 0 + 0 + 1 + 2 + ... + (n - 1)

@@ -18,7 +18,6 @@ open FSharp.Text.Parsing
 // FIXME: Add (more) precedence/associativity declarations here.
 %left PLUS MINUS
 %left TIMES
-%left LET
 
 %start Prog
 %type <AbSyn.Exp> Prog
@@ -39,11 +38,6 @@ Exp : INT            { AbSyn.CONSTANT (AbSyn.INT $1) }
     | LET VAR EQ Exp IN Exp { AbSyn.LET_IN($2, $4, $6) }
     | Rop LPAR ExpList RPAR { AbSyn.OVER_LIST ($1, $3) }
     | Rop VAR EQ Exp TO Exp OF Exp { AbSyn.OVER_RANGE ($1, $2, $4, $6, $8) }
-
-Binop :
-    | PLUS    { AbSyn.BPLUS }
-    | MINUS   { AbSyn.BMINUS }
-    | TIMES    { AbSyn.BTIMES }
 
 Rop :
     | SUM    { AbSyn.RSUM }
